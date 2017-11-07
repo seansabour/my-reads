@@ -54,7 +54,6 @@ class BooksApp extends React.Component {
     handleSearchAPI = (value) => {
         BooksAPI.search(value, 20).then(res => {
             if(res.error) {
-                console.log(`Error occured: ${res.error} and ${value}`)
                 this.setState({ searchBooks: [] });
                 return;
             }
