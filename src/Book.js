@@ -11,7 +11,7 @@ function Book(props) {
                     style={{
                         width: 128,
                         height: 193,
-                        backgroundImage: `url(${props.book.imageLinks ? props.book.imageLinks.smallThumbnail : ""})`
+                        backgroundImage: `url(${props.book.imageLinks ? props.book.imageLinks.smallThumbnail : "http://via.placeholder.com/128x193?text=No%20Cover"})`
                     }}
                 />
                 <div className="book-shelf-changer">
@@ -36,7 +36,7 @@ function Book(props) {
                 </div>
             </div>
             <div className="book-title"><a href={props.book.previewLink} target="_blank" >{props.book.title}</a></div>
-            <div className="book-authors">{props.book.authors ? props.book.authors.toString() : "Unknown"}</div>
+            <div className="book-authors">{props.book.authors ? props.book.authors.join(", ") : "Unknown"}</div>
         </div>
     );
 }
